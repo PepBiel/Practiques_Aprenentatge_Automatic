@@ -32,6 +32,16 @@ svc.predict(X_transformed)
 plt.figure(1)
 plt.scatter(X_transformed[:, 0], X_transformed[:, 1], c=y)
 
+
+# COSAS A SABER
+# Para saber la pendiente y el origen de una recta debemos hacer algunos calculos:
+# Recta = w1 * x1 + w2 * x2 + bias = 0
+# Tenemos que transformarla a x2 = m * x1 + b    m -> pendiente, b -> origen
+# x2 = -w1/w2 * x1 - bias/w2
+# m -> -w1/w2
+# b -> -bias/w2    ->  Origen (0, -bias/w2), cuando x1 = 0, x2 = -bias/w2
+
+
 #  Mostrem els resultats Adaline, calculam un punt i la pendent de la recta del perceptron
 m = -perceptron.w_[1] / perceptron.w_[2]
 origen = (0, -perceptron.w_[0] / perceptron.w_[2])
